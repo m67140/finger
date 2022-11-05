@@ -1,0 +1,93 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+body{
+    font-family: "Sans-serif";
+    background-color: black;
+}
+.hand{
+    height: 100vh;
+    width: 800px;
+    margin: 0 auto;
+    background-color:#4492F4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+.finger{
+    width: 50px;
+    height: 200px;
+    background-color: #fff;
+    border-radius: 10px 10px 20px 20px;
+    position: relative;
+    animation: up-down 1.5s linear infinite;
+
+&::before{
+    content:"";
+    width: 30px;
+    height: 5px;
+    position: absolute;
+    left: 10px;
+    top: 12px;
+    background-color: transparent;
+    border-top: 5px solid #4492F4;
+    border-bottom: 5px solid #4492F4;
+}
+
+&::after{
+    content:"";
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: 10.5px;
+    bottom: 12px;
+    background-color: #4492F4;
+    border-radius: 40px 40px 22px 22px;
+}
+
+&1{
+    height: 120px;
+}
+&2{
+    height: 140px;
+    animation-delay: .2s;
+}
+&3{
+    height: 160px;
+    animation-delay: .4s;
+}
+&4{
+    height: 130px;
+    animation-delay: .6s;
+}
+&5{
+    height: 35px;
+    animation-delay: .8s;
+
+&::before{
+    display: none;
+}
+&::after{
+    bottom: 35px;
+    left: 0;
+    border-radius: 20px;
+}
+}
+}
+
+@keyframes  up-down {
+    from{
+        transform: translateY(0);
+    }
+    20%{
+        transform: translateY(-50px);
+    }40%{
+        transform: translateY(0);
+    }100%{
+        transform: translateY(0);
+    }
+}
